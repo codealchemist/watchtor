@@ -95,6 +95,10 @@ footer {
   padding: 5px 0;
 }
 
+.vjs-control-bar {
+  z-index: 100;
+}
+
 .appear {
   transition: 2s;
   animation-duration: 5s;

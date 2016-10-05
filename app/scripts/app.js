@@ -64,6 +64,7 @@ export default class App {
     bean.on(document, 'keyup', (e) => {
       if (e.keyCode === 27) {
         this.player.close()
+        this.$loading.hide()
         this.$magnetLinkInput.show().focus()
       }
     })

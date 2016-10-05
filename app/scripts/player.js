@@ -4,7 +4,6 @@ export default class Player {
   constructor() {
     this.videoId = 'video'
     this.player = videojs(this.videoId, {fluid: true})
-    this.$loading = new El('loading')
     this.$videoContainer = new El('video-container')
 
     // status
