@@ -2,12 +2,12 @@ export default class Config {
   constructor() {
     let config = {
       'localhost': {
-        baseUrl: 'http://localhost:9000',
+        baseUrl: '//localhost:9000',
         shortBaseUrl: 'https://goo.gl/'
       },
 
       'watchtor.herokuapp.com': {
-        baseUrl: 'http://watchtor.herokuapp.com',
+        baseUrl: '//watchtor.herokuapp.com',
         shortBaseUrl: 'https://goo.gl/'
       }
     }
@@ -19,6 +19,9 @@ export default class Config {
     }
 
     this.config = config[host]
+
+    // add protocol
+    this.config.baseUrl = location.protocol + this.config.baseUrl
   }
 
   get(key) {
