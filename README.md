@@ -5,7 +5,7 @@ Watchtor provides a minimalistic approach to online torrent watching.
 
 You'll be received by a big input where you can paste magnet links and that's it.
 
-Inmediately after pasting a magnet link Watchtor will try to stream your video.
+Immediately after pasting a magnet link Watchtor will try to stream your video.
 
 Pressing the ESC key will cancel / close the video and you'll get the input again.
 
