@@ -5,7 +5,8 @@
     "modernizr": "~2.8.1",
     "system.js": "^0.19.39",
     "alertify-js": "^1.8.0",
-    "bean": "^1.0.14"
+    "bean": "^1.0.14",
+    "filesize": "^3.3.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",

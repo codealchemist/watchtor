@@ -25,4 +25,9 @@ export default class El {
     this.$el.focus()
     return this
   }
+
+  html(value) {
+    this.$el.innerHTML = value
+    return this
+  }
 }
