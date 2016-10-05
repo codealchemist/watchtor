@@ -1,4 +1,4 @@
-# watchtor
+# Watchtor
 Watch torrents online.
 
 Watchtor provides a minimalistic approach to online torrent watching.
