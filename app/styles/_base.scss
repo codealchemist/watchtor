@@ -1,0 +1,51 @@
+:focus {
+  outline: none;
+}
+
+body {
+  background: $background;
+  overflow: hidden;
+  font-family: Raleway;
+}
+
+#video-container {
+  display: none;
+}
+
+.abs-center {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.rounded {
+  border-radius: 5px;
+}
+
+.big-input {
+  width: 50%;
+  height: 50px;
+  border: 0;
+  padding: 10px;
+  font: 16px Raleway;
+}
+
+#loading {
+  display: none;
+  width: 200px;
+  height: 200px;
+  z-index: 20000;
+
+  &:before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #background;
+  }
+}
