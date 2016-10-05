@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "start": "node index.js"
+  },
   "private": true,
   "engines": {
     "node": ">=4"
