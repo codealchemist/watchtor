@@ -20,7 +20,7 @@ export default class App {
   }
 
   autoloadMagnetLink() {
-    if (!location.pathname === '/magnet/magnet:') return false
+    if (location.pathname !== '/magnet/magnet:') return false
 
     let url = location.href
     let baseUrl = `${location.origin}/magnet/`
