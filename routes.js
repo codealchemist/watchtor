@@ -1,3 +1,5 @@
+"use strict";
+
 const requestify = require('requestify')
 const shortUrlHost = 'https://goo.gl'
 const ttl = 24 // hours
