@@ -24,6 +24,6 @@ module.exports = function routes(app) {
     let shortUrl = `${shortUrlHost}/${shortUrlId}`
     console.info(`-- redirect to short url: ${shortUrl}`)
 
-    res.redirect(${shortUrl})
+    res.redirect(shortUrl)
   })
 }
