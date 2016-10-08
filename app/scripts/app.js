@@ -72,6 +72,7 @@ export default class App {
     // player event to hide loading when playback is about to start
     this.player.on('loadeddata', () => {
       this.$loading.hide()
+      this.player.show()
     })
   }
 
