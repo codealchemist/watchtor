@@ -74,6 +74,14 @@ export default class App {
       this.$loading.hide()
       this.player.show()
     })
+
+    // handle playback errors
+    this.player.on('error', (event) => {
+      alertify.error('I can\'t play this video, sorry.')
+      this.player.close()
+      this.$loading.hide()
+      this.$magnetLinkInput.show().focus()
+    })
   }
 
   isMagnetLink(value) {

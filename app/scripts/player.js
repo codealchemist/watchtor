@@ -15,6 +15,7 @@ export default class Player {
     this.$downloadSpeed = new El('downloadSpeed')
     this.$uploadSpeed = new El('uploadSpeed')
     this.$progress = new El('progress')
+    this.showStatsTimeout;
   }
 
   // player proxy
@@ -106,10 +107,11 @@ export default class Player {
     this.client.destroy()
     clearInterval(this.interval)
     this.$stats.hide()
+    clearTimeout(this.showStatsTimeout)
   }
 
   showStats() {
-    setTimeout(() => {
+    this.showStatsTimeout = setTimeout(() => {
       this.$stats.show()
     }, 1000 * this.intervalSeconds)
 
