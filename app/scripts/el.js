@@ -26,6 +26,11 @@ export default class El {
     return this
   }
 
+  click () {
+    this.$el.click()
+    return this
+  }
+
   html(value) {
     this.$el.innerHTML = value
     return this

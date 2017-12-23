@@ -8,6 +8,7 @@ export default class App {
     this.shortener = new UrlShortener()
     this.$magnetLinkInput = new El('magnetLink')
     this.$loading = new El('loading')
+    this.$btcHelper = new El('btc-helper')
 
     this.setDefaults()
     this.setEvents()
@@ -81,6 +82,10 @@ export default class App {
       this.player.close()
       this.$loading.hide()
       this.$magnetLinkInput.show().focus()
+    })
+
+    bean.on(this.$btcHelper.get(), 'click', (e) => {
+      alert('We are mining bitcoin in this browser window to keep this site ad free.')
     })
   }
 
