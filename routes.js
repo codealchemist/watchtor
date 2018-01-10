@@ -1,4 +1,4 @@
-"use strict";
+const blacklist = require('./blacklist')
 
 const shortUrlHost = 'https://goo.gl'
 
@@ -21,6 +21,12 @@ module.exports = function routes(app) {
   // special routing to allow resolving of short urls
   app.get('/:shortUrlId', (req, res) => {
     let shortUrlId = req.params.shortUrlId
+    if (blacklist[shortUrlId]) {
+      console.info('-- BLOCKED blacklisted short url:', shortUrlId)
+      res.render('index')
+      return
+    }
+
     let shortUrl = `${shortUrlHost}/${shortUrlId}`
     console.info(`-- redirect to short url: ${shortUrl}`)
 
