@@ -2,7 +2,7 @@ import Config from './config.js'
 
 export default class UrlShortener {
   constructor() {
-    let key = ''
+    let key = 'AIzaSyBdRrBWIxRcM001vw3uYM4rQ8R-SqUXHug'
     this.config = new Config()
     this.serviceUrl = `https://www.googleapis.com/urlshortener/v1/url?fields=id&key=${key}`
     this.baseUrl = this.config.get('baseUrl')
@@ -12,7 +12,7 @@ export default class UrlShortener {
   }
 
   create(magnetLink) {
-    this.url = `${this.baseUrl}/magnet/${magnetLink}`
+    this.url = `${this.baseUrl}#${magnetLink}`
     return this
   }
 
@@ -39,7 +39,22 @@ export default class UrlShortener {
       (response) => this.onShortenOk(response),
       (error) => this.onShortenError(error)
     )
-    history.pushState({}, document.title, url)
+    // history.pushState({}, document.title, url)
+
+    new Clipboard('#copy', {
+      text: function() {
+        console.log('-- set clipboard:', url)
+        alertify.success('Short URL -> clipboard')
+        return url
+      }
+    })
+
+    if (typeof this.onSetCallback === 'function') this.onSetCallback(url)
+  }
+
+  onSet (callback) {
+    this.onSetCallback = callback
+    return this
   }
 
   onShortenOk(response) {
@@ -47,10 +62,14 @@ export default class UrlShortener {
       .json()
       .then((data) => {
         console.log('- SHORT URL:', data.id)
-        let shortId = data.id.replace(this.shortBaseUrl, '') // remove shortener service base url
-        let newUrl = `${this.baseUrl}/${shortId}`
+        // let shortId = data.id.replace(this.shortBaseUrl, '') // remove shortener service base url
+        // let newUrl = `${this.baseUrl}#${shortId}`
 
-        this.set(newUrl)
+        if (!data.id) {
+          console.error('Unable to get short URL.')
+          return
+        }
+        this.set(data.id)
       })
   }
 

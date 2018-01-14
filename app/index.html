@@ -10,11 +10,11 @@
     <!-- open graph -->
     <meta property="og:title" content="Watchtor" />
     <meta property="og:site_name" content="Watchtor"/>
-    <meta property="og:url" content="https://watchtor.herokuapp.com" />
+    <meta property="og:url" content="https://ipfs.io/ipfs/QmbTZSNqhyuL83xMBaVELHotMVr3MGJVdrtqgdyYHeQ4Po" />
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="https://watchtor.herokuapp.com/images/WebTorrent.png" />
+    <meta property="og:image" content="https://ipfs.io/ipfs/QmSsApgbtrvEHmxU9dQrFVxkSftnoyZchq4AQvuSJpYrHd" />
     <meta property="og:description" content="Watch torrents online." />
-    <link rel="image_src" href="https://watchtor.herokuapp.com/images/WebTorrent.png" />
+    <link rel="image_src" href="https://ipfs.io/ipfs/QmSsApgbtrvEHmxU9dQrFVxkSftnoyZchq4AQvuSJpYrHd" />
 
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <!-- Place favicon.ico in the root directory -->
@@ -43,6 +43,11 @@
     <![endif]-->
 
     <div id="app" class="container-fluid">
+      <i
+        id="copy"
+        title="Copy short URL to clipboard"
+      >📋</i>
+
       <div class="input-container">
         <input
           id="magnetLink"
@@ -121,6 +126,7 @@
 
     <script src="//cdn.jsdelivr.net/webtorrent/latest/webtorrent.min.js"></script>
     <script src="//vjs.zencdn.net/5.11.7/video.js"></script>
+    <script src="//cdn.rawgit.com/zenorocha/clipboard.js/v1.5.13/dist/clipboard.min.js"></script>
 
     <!-- build:js /scripts/vendor.js -->
     <script src="/bower_components/alertify-js/build/alertify.js"></script>

@@ -66,6 +66,21 @@ body {
   }
 }
 
+#copy {
+  display: none;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-style: normal;
+  cursor: pointer;
+  opacity: 0.5;
+  z-index: 100;
+}
+
+#copy:hover {
+  opacity: 1;
+}
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {

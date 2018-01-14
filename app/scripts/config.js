@@ -6,8 +6,8 @@ export default class Config {
         shortBaseUrl: 'https://goo.gl/'
       },
 
-      'watchtor.herokuapp.com': {
-        baseUrl: '//watchtor.herokuapp.com',
+      'ipfs.io': {
+        baseUrl: '//ipfs.io/ipfs/QmWpsxxLQowEq8xed4jwMnqsE5QnHbzuMmVUq3BhYVAJKZ/dist',
         shortBaseUrl: 'https://goo.gl/'
       }
     }
