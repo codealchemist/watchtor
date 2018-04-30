@@ -1,18 +1,15 @@
-import Config from './config.js'
-
 export default class UrlShortener {
   constructor() {
     let key = ''
-    this.config = new Config()
     this.serviceUrl = `https://www.googleapis.com/urlshortener/v1/url?fields=id&key=${key}`
-    this.baseUrl = this.config.get('baseUrl')
-    this.shortBaseUrl = this.config.get('shortBaseUrl')
+    this.baseUrl = `${location.protocol}//${location.host}`
+    this.shortBaseUrl = 'https://goo.gl/'
     this.promise = null
     this.url = null
   }
 
   create(magnetLink) {
-    this.url = `${this.baseUrl}/magnet/${magnetLink}`
+    this.url = `${this.baseUrl}#${magnetLink}`
     return this
   }
 

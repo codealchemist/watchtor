@@ -179,8 +179,13 @@ gulp.task('build-scripts', () => {
     });
 })
 
+gulp.task('copy-vendor', () => {
+  gulp.src('app/scripts/vendor/*.js')
+    .pipe(gulp.dest('dist/scripts/vendor'))
+})
+
 gulp.task('build', () => {
-  runSequence('clean', ['lint', 'html', 'images', 'fonts', 'extras'], 'build-scripts', 'dist-size')
+  runSequence('clean', ['lint', 'html', 'images', 'fonts', 'extras', 'copy-vendor'], 'build-scripts', 'dist-size')
 })
 
 gulp.task('dist-size', () => {

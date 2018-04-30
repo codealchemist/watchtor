@@ -20,11 +20,9 @@ export default class App {
   }
 
   autoloadMagnetLink() {
-    if (location.pathname !== '/magnet/magnet:') return false
+    if (!location.hash.match('#magnet:')) return false
 
-    let url = location.href
-    let baseUrl = `${location.origin}/magnet/`
-    let magnetLink = url.replace(baseUrl, '')
+    let magnetLink = location.hash.slice(1)
     if (!this.isMagnetLink(magnetLink)) {
       alertify.error('Invalid magnet link!')
       return
@@ -40,12 +38,9 @@ export default class App {
     this.$loading.show()
     this.player.play(magnetLink)
 
-    // get a short url and set it
-    // prettier sharing ;)
-    this.shortener
-      .create(magnetLink)
-      .shorten()
-      .set()
+    // TODO: Find a wait to shorten the URL
+    this.shortener.create(magnetLink)
+    this.shortener.set(this.shortener.url)
   }
 
   setEvents() {
