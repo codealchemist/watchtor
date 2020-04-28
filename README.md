@@ -1,3 +1,5 @@
+<a href="https://www.buymeacoffee.com/codealchemist" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-black.png" alt="Buy Me A Coffee" width="150px"></a>
+
 # Watchtor
 Watch torrents online.
 
